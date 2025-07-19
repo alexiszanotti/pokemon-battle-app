@@ -61,7 +61,10 @@ export const TeamBuilder = () => {
     <section className='w-72 flex flex-col shadow rounded-xl px-4 '>
       <div className='flex items-center justify-between mb-4'>
         <h3 className='text-xl font-semibold'>Current Team ({draftTeam.length}/6)</h3>
-        <button onClick={clear} className='text-sm text-red-500 hover:underline'>
+        <button
+          onClick={clear}
+          className='hover:cursor-pointer text-sm text-red-500 hover:underline'
+        >
           Clear Draft
         </button>
       </div>
@@ -122,12 +125,12 @@ const SortablePokemon = ({ pokemon, onRemove }) => {
     <li
       ref={setNodeRef}
       style={style}
-      className='relative bg-gray-800 rounded-lg p-3 shadow text-center cursor-move'
+      className='active:cursor-grabbing relative bg-gray-800 rounded-lg p-3 shadow text-center cursor-grab'
     >
       <div
         {...attributes}
         {...listeners}
-        className='font-bold capitalize inline-block mb-1 cursor-move select-none'
+        className='active:cursor-grabbing font-bold capitalize inline-block mb-1 cursor-grab select-none'
         title='Drag to reorder'
       >
         {pokemon.name}
@@ -136,7 +139,7 @@ const SortablePokemon = ({ pokemon, onRemove }) => {
         ATK: {getStat(pokemon, 'attack')} | DEF: {getStat(pokemon, 'defense')}
       </p>
       <button
-        className='absolute top-1 right-2 text-red-500 hover:text-red-700'
+        className='hover:cursor-pointer absolute top-1 right-2 text-red-500 hover:text-red-700'
         onClick={e => {
           e.stopPropagation();
           onRemove(pokemon.name);

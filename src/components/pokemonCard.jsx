@@ -13,9 +13,9 @@ const PokemonCard = ({ name, onSelect, typeFilter }) => {
   if (!matchesType) return null;
 
   return (
-    <li className='max-w-72 bg-gray-800 rounded-xl shadow-md hover:cursor-pointer transition-transform transform'>
+    <li className='max-w-72 bg-gray-800 rounded-xl shadow-md  transition-transform transform'>
       <button
-        className='w-full p-3 text-center flex flex-col items-center'
+        className='w-full p-3 text-center flex flex-col items-center hover:cursor-pointer'
         onClick={() => onSelect(data)}
       >
         <img
