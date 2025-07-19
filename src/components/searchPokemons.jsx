@@ -26,7 +26,7 @@ const SearchPokemon = () => {
   }, [listData, search]);
 
   return (
-    <section className='flex-1 w-full shadow rounded-xl p-4 h-full max-h-full flex flex-col'>
+    <section className='w-full shadow rounded-xl px-4 max-h-[595px] flex flex-col'>
       <h3 className='text-xl font-semibold mb-4'>Search Pokémon</h3>
       <div className='flex gap-4 mb-4'>
         <input
@@ -58,7 +58,7 @@ const SearchPokemon = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className='flex-1 overflow-y-auto'>
+        <div className='overflow-y-auto max-h-full custom-scrollbar'>
           <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'>
             {filtered.map(({ name }) => (
               <PokemonCard key={name} name={name} onSelect={addPokemon} typeFilter={typeFilter} />

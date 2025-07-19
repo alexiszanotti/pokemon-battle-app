@@ -58,7 +58,7 @@ export const TeamBuilder = () => {
   };
 
   return (
-    <section className='w-72 flex flex-col shadow rounded-xl p-4 '>
+    <section className='w-72 flex flex-col shadow rounded-xl px-4 '>
       <div className='flex items-center justify-between mb-4'>
         <h3 className='text-xl font-semibold'>Current Team ({draftTeam.length}/6)</h3>
         <button onClick={clear} className='text-sm text-red-500 hover:underline'>

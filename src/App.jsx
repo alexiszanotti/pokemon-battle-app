@@ -1,9 +1,9 @@
-import SearchPokemon from './components/SearchPokemons';
-import { TeamBuilder } from './features/teams/components/TeamBuilder';
+import SearchPokemon from './components/searchPokemons';
+import { TeamBuilder } from './features/teams/components/teamBuilder';
 
 function App() {
   return (
-    <div className='p-4 mx-auto space-y-6 w-full flex h-full max-h-full'>
+    <div className=' w-full flex '>
       <TeamBuilder />
       <SearchPokemon />
     </div>
