@@ -5,10 +5,10 @@ const NavBar = () => {
   return (
     <nav className='bg-gray-800 p-4  w-full z-50'>
       <div className='flex items-center justify-between max-w-7xl mx-auto'>
-        <Link to='/' className='text-white text-lg font-bold'>
+        <Link to='/'>
           <div className='flex items-center space-x-2'>
             <img src={Pokeball} alt='Pokemon Logo' className='w-8 h-8' />
-            <h1 className='text-white text-xl font-bold'>Pokémon Battle</h1>
+            <h1 className='text-gray-300 text-xl font-bold'>Pokémon Battle</h1>
           </div>
         </Link>
 
