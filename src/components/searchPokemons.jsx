@@ -1,4 +1,3 @@
-// src/features/teams/components/SearchPokemon.jsx
 import { useState, useMemo } from 'react';
 
 import { useAllPokemons, usePokemonTypes } from '../api/hook/usePokemons';
