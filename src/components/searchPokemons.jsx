@@ -17,7 +17,7 @@ const SearchPokemon = () => {
   const { data: types } = usePokemonTypes();
   const addPokemon = useTeamStore(s => s.addPokemonToDraft);
 
-  const filtered = useMemo(() => {
+  const filteredPokemons = useMemo(() => {
     if (!listData?.results) return [];
     return listData.results.filter(pokemon =>
       pokemon.name.toLowerCase().includes(search.toLowerCase())
@@ -50,7 +50,7 @@ const SearchPokemon = () => {
         </select>
       </div>
 
-      {filtered.length === 0 && !isLoading && (
+      {filteredPokemons.length === 0 && !isLoading && (
         <div className='text-center text-gray-400'>Pokémon not found</div>
       )}
 
@@ -59,7 +59,7 @@ const SearchPokemon = () => {
       ) : (
         <div className='overflow-y-auto max-h-full custom-scrollbar'>
           <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3'>
-            {filtered.map(({ name }) => (
+            {filteredPokemons.map(({ name }) => (
               <PokemonCard key={name} name={name} onSelect={addPokemon} typeFilter={typeFilter} />
             ))}
           </ul>
